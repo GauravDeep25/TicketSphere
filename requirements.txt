@@ -2,7 +2,6 @@
 # This file helps Render identify the project structure
 
 # Node.js version
-node==18.x
 
 # Build Command: npm install
 # Start Command: npm start
