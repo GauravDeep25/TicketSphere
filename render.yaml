@@ -51,8 +51,9 @@ services:
         value: abcd_efgh_ijkl_mnop
     
   # Frontend Static Site Service
-  - type: static
+  - type: web
     name: ticketsphere-frontend
+    env: static
     buildCommand: cd client && npm install && npm run build
     staticPublishPath: client/dist
     routes:
