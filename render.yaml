@@ -2,8 +2,7 @@ services:
   # Backend API Service
   - type: web
     name: ticketsphere-api
-    env: node
-    region: oregon
+    runtime: node
     buildCommand: cd server && npm install
     startCommand: cd server && npm start
     healthCheckPath: /api/health
@@ -52,9 +51,8 @@ services:
         value: abcd_efgh_ijkl_mnop
     
   # Frontend Static Site Service
-  - type: web
+  - type: static
     name: ticketsphere-frontend
-    env: static
     buildCommand: cd client && npm install && npm run build
     staticPublishPath: client/dist
     routes:
