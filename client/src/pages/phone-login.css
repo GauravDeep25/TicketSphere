@@ -1,0 +1,317 @@
+/* Phone Login Page Styles */
+.phone-login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px);
+  background-color: var(--background-dark);
+  color: var(--text-primary);
+  padding: 2rem 1rem;
+}
+
+.phone-login-card {
+  width: 100%;
+  max-width: 28rem;
+  padding: 2rem;
+  background-color: var(--card-background);
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border-color);
+}
+
+.phone-login-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+.phone-login-subtitle {
+  text-align: center;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+
+/* Billing Notice */
+.billing-notice {
+  background-color: rgba(249, 115, 22, 0.15);
+  border: 1px solid rgba(249, 115, 22, 0.3);
+  color: #fed7aa;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.billing-notice p {
+  margin: 0;
+}
+
+.email-login-link {
+  color: var(--accent-primary);
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.email-login-link:hover {
+  color: var(--accent-primary-light);
+}
+
+/* OTP Sent Status */
+.otp-sent-status {
+  background-color: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: var(--success-color);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+/* Phone Number Display */
+.phone-display {
+  background-color: var(--background-secondary);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.phone-number {
+  color: var(--accent-primary);
+  font-weight: 600;
+}
+
+/* Form Styles */
+.phone-login-form {
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: var(--input-background);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  color: var(--text-primary);
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.form-input::placeholder {
+  color: var(--text-secondary);
+}
+
+.form-input.phone-input {
+  font-family: monospace;
+  letter-spacing: 0.5px;
+}
+
+.phone-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.country-code-prefix {
+  position: absolute;
+  left: 1rem;
+  color: var(--accent-primary);
+  font-weight: 600;
+  font-size: 1rem;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.phone-input-container .form-input {
+  padding-left: 2rem;
+}
+
+.form-input.otp-input {
+  font-family: monospace;
+  letter-spacing: 2px;
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+/* Submit Button */
+.submit-button {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: white;
+}
+
+.submit-button.send-otp {
+  background-color: var(--accent-primary);
+}
+
+.submit-button.send-otp:hover:not(:disabled) {
+  background-color: var(--accent-primary-dark);
+  transform: translateY(-1px);
+}
+
+.submit-button.verify-otp {
+  background-color: var(--success-color);
+}
+
+.submit-button.verify-otp:hover:not(:disabled) {
+  background-color: #16a34a;
+  transform: translateY(-1px);
+}
+
+.submit-button:disabled {
+  background-color: var(--text-secondary);
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid transparent;
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Alert Styles */
+.alert {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.alert-error {
+  background-color: rgba(248, 113, 113, 0.1);
+  border: 1px solid rgba(248, 113, 113, 0.3);
+  color: var(--error-color);
+}
+
+/* ReCAPTCHA Container */
+#recaptcha-container {
+  margin: 1rem 0;
+}
+
+/* Footer Links */
+.phone-login-footer {
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.phone-login-link {
+  color: var(--accent-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.phone-login-link:hover {
+  color: var(--accent-primary-light);
+  text-decoration: underline;
+}
+
+/* Resend OTP Button */
+.resend-otp-button {
+  background: none;
+  border: none;
+  color: var(--accent-primary);
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 0.875rem;
+  margin-top: 1rem;
+  transition: color 0.2s ease;
+}
+
+.resend-otp-button:hover:not(:disabled) {
+  color: var(--accent-primary-light);
+}
+
+.resend-otp-button:disabled {
+  color: var(--text-secondary);
+  cursor: not-allowed;
+  text-decoration: none;
+}
+
+/* Helper Text */
+.helper-text {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-top: 0.5rem;
+  line-height: 1.4;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .phone-login-container {
+    padding: 1rem;
+    min-height: calc(100vh - 60px);
+  }
+  
+  .phone-login-card {
+    padding: 1.5rem;
+  }
+  
+  .phone-login-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .phone-login-card {
+    padding: 1rem;
+  }
+  
+  .phone-login-title {
+    font-size: 1.375rem;
+  }
+  
+  .form-input.otp-input {
+    font-size: 1.125rem;
+    letter-spacing: 1px;
+  }
+}

@@ -1,0 +1,330 @@
+/* CSS Variables for consistent theming */
+:root {
+  --background-dark: #111827;
+  --background-med: #1F2937;
+  --background-light: #374151;
+  --text-light: #F9FAFB;
+  --text-med: #9CA3AF;
+  --text-dark: #6B7280;
+  --accent-primary: #3B82F6;
+  --accent-primary-darker: #2563EB;
+  --accent-secondary: #60A5FA;
+  --success: #10B981;
+  --success-darker: #059669;
+  --warning: #F59E0B;
+  --error: #EF4444;
+  --border-color: #4B5563;
+}
+
+/* --- Main Page Container --- */
+.sell-ticket-page {
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    min-height: 100vh;
+    padding: 2rem 1rem;
+}
+
+.form-container {
+    max-width: 56rem; /* max-w-4xl */
+    margin: 0 auto;
+    background-color: var(--background-med);
+    border-radius: 0.5rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.page-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.page-subtitle {
+    color: var(--text-med);
+    font-size: 1rem;
+}
+
+/* --- Form & Sections --- */
+.event-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.form-section {
+    background-color: var(--background-light);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-light);
+}
+
+.section-icon {
+    color: var(--accent-primary);
+}
+
+.section-icon-green {
+    color: var(--success);
+}
+
+/* --- Input Groups --- */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-group.full-width {
+    grid-column: 1 / -1;
+    margin-top: 1.5rem;
+}
+
+.input-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: var(--background-med);
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    color: var(--text-light);
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.form-input::placeholder {
+    color: var(--text-dark);
+}
+
+.form-input option {
+    background-color: var(--background-med);
+    color: var(--text-light);
+}
+
+.form-textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: var(--background-med);
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    color: var(--text-light);
+    font-size: 0.875rem;
+    resize: vertical;
+    min-height: 100px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.form-textarea::placeholder {
+    color: var(--text-dark);
+}
+
+/* --- Grid Layouts --- */
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.tier-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+/* --- Ticket Tier Styles --- */
+.ticket-tier {
+    background-color: var(--background-med);
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.tier-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.tier-title {
+    font-weight: 600;
+    color: var(--text-light);
+    font-size: 1rem;
+}
+
+.remove-tier-button {
+    background: none;
+    border: none;
+    color: var(--error);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.remove-tier-button:hover {
+    background-color: rgba(239, 68, 68, 0.1);
+    transform: scale(1.1);
+}
+
+/* --- Add Tier Button --- */
+.add-tier-button {
+    width: 100%;
+    padding: 0.75rem;
+    background: none;
+    border: 2px dashed var(--accent-primary);
+    color: var(--accent-primary);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+
+.add-tier-button:hover {
+    background-color: var(--accent-primary);
+    color: white;
+    transform: translateY(-0.125rem);
+}
+
+/* --- Messages & Buttons --- */
+.error-message {
+    background-color: rgba(239, 68, 68, 0.1);
+    border: 1px solid var(--error);
+    color: #FECACA;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-primary-darker) 100%);
+    color: white;
+    font-weight: 700;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+}
+
+.submit-button:hover:not(:disabled) {
+    transform: translateY(-0.125rem);
+    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+}
+
+.submit-button:disabled {
+    background: var(--text-dark);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.helper-text {
+    text-align: center;
+    color: var(--text-med);
+    font-size: 0.875rem;
+    margin-top: 1rem;
+}
+
+/* Spinner for loading state */
+.spinner {
+    animation: spin 1s linear infinite;
+    border-radius: 50%;
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 2px solid transparent;
+    border-bottom: 2px solid white;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* --- Responsive Grid --- */
+@media (min-width: 768px) {
+    .details-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .tier-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .sell-ticket-page {
+        padding: 3rem 2rem;
+    }
+    
+    .form-container {
+        padding: 3rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .sell-ticket-page {
+        padding: 1rem 0.5rem;
+    }
+    
+    .form-container {
+        padding: 1.5rem;
+    }
+    
+    .page-title {
+        font-size: 1.875rem;
+    }
+    
+    .section-title {
+        font-size: 1.25rem;
+    }
+}

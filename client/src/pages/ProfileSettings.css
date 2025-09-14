@@ -1,0 +1,564 @@
+/* CSS Variables - Inheriting from main theme */
+:root {
+  --background-dark: #111827;
+  --background-med: #1F2937;
+  --background-light: #374151;
+  --text-light: #F9FAFB;
+  --text-med: #9CA3AF;
+  --text-dark: #6B7280;
+  --accent-primary: #3B82F6;
+  --accent-primary-darker: #2563EB;
+  --accent-secondary: #60A5FA;
+  --success: #10B981;
+  --success-darker: #059669;
+  --warning: #F59E0B;
+  --error: #EF4444;
+  --border-color: #4B5563;
+}
+
+/* --- Main Profile Container --- */
+.profile-settings-page {
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    min-height: 100vh;
+    padding: 2rem 1rem;
+}
+
+.profile-container {
+    max-width: 48rem; /* max-w-3xl */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* --- Profile Header Section --- */
+.profile-header {
+    background-color: var(--background-med);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    gap: 1rem;
+}
+
+.header-info {
+    flex: 1;
+}
+
+.page-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+    color: var(--text-med);
+    font-size: 1rem;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+}
+
+.button-group {
+    display: flex;
+    gap: 0.75rem;
+}
+
+/* Profile Photo Section */
+.profile-photo-section {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.avatar-section {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.profile-avatar-container {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--accent-primary);
+    background-color: var(--background-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.avatar-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-display-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+
+.profile-email-display {
+    color: var(--text-med);
+    font-size: 0.875rem;
+    margin-bottom: 0.25rem;
+}
+
+.member-since {
+    color: var(--accent-primary);
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.avatar-edit-button {
+    position: absolute;
+    bottom: -0.25rem;
+    right: -0.25rem;
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--accent-primary);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.avatar-edit-button:hover {
+    background-color: var(--accent-primary-darker);
+    transform: scale(1.1);
+}
+
+/* Form Labels Enhancement */
+.form-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.form-input.disabled,
+.form-textarea.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.field-note {
+    font-size: 0.75rem;
+    color: var(--text-dark);
+    margin-top: 0.25rem;
+}
+
+/* --- Settings Card --- */
+.settings-card {
+    background-color: var(--background-med);
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.card-header {
+    background-color: var(--background-light);
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.card-icon {
+    color: var(--accent-primary);
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+/* --- Form Components --- */
+.settings-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: var(--background-dark);
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    color: var(--text-light);
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.form-input::placeholder {
+    color: var(--text-dark);
+}
+
+.form-textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: var(--background-dark);
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    color: var(--text-light);
+    font-size: 0.875rem;
+    resize: vertical;
+    min-height: 100px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.form-textarea::placeholder {
+    color: var(--text-dark);
+}
+
+/* --- Button Styles --- */
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: none;
+    font-size: 0.875rem;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-primary-darker) 100%);
+    color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+    transform: translateY(-0.125rem);
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+}
+
+.btn-primary:disabled {
+    background: var(--text-dark);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.btn-secondary {
+    background-color: var(--background-light);
+    color: var(--text-light);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--background-dark);
+}
+
+.btn-danger {
+    background-color: var(--error);
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #DC2626;
+}
+
+/* --- Status Messages --- */
+.success-message {
+    background-color: rgba(16, 185, 129, 0.1);
+    border: 1px solid var(--success);
+    color: #A7F3D0;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+.error-message {
+    background-color: rgba(239, 68, 68, 0.1);
+    border: 1px solid var(--error);
+    color: #FECACA;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+/* --- Password Change Section --- */
+.password-form {
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.5rem;
+    margin-top: 1rem;
+}
+
+.password-requirements {
+    font-size: 0.75rem;
+    color: var(--text-dark);
+    margin-top: 0.25rem;
+}
+
+.password-strength {
+    margin-top: 0.5rem;
+}
+
+.strength-bar {
+    width: 100%;
+    height: 0.25rem;
+    background-color: var(--background-dark);
+    border-radius: 0.125rem;
+    overflow: hidden;
+}
+
+.strength-fill {
+    height: 100%;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.strength-weak { background-color: var(--error); }
+.strength-medium { background-color: var(--warning); }
+.strength-strong { background-color: var(--success); }
+
+.strength-text {
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+    font-weight: 500;
+}
+
+.strength-weak-text { color: var(--error); }
+.strength-medium-text { color: var(--warning); }
+.strength-strong-text { color: var(--success); }
+
+/* --- Account Management Section --- */
+.account-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.account-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem;
+    background-color: var(--background-light);
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-color);
+}
+
+.account-info {
+    flex: 1;
+}
+
+.account-item-title {
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 0.25rem;
+}
+
+.account-item-description {
+    font-size: 0.875rem;
+    color: var(--text-med);
+}
+
+.status-badge {
+    padding: 0.375rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-badge.verified {
+    background-color: rgba(16, 185, 129, 0.15);
+    color: var(--success);
+    border: 1px solid var(--success);
+}
+
+.status-badge.pending {
+    background-color: rgba(245, 158, 11, 0.15);
+    color: var(--warning);
+    border: 1px solid var(--warning);
+}
+
+/* --- Account Actions --- */
+.danger-zone {
+    background-color: rgba(239, 68, 68, 0.05);
+    border: 1px solid var(--error);
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+    margin-top: 1rem;
+}
+
+.danger-title {
+    color: var(--error);
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.danger-description {
+    color: var(--text-med);
+    font-size: 0.875rem;
+}
+
+/* --- Grid Layout --- */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+    .form-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .form-group.full-width {
+        grid-column: 1 / -1;
+    }
+}
+
+/* --- Loading States --- */
+.loading-spinner {
+    animation: spin 1s linear infinite;
+    border-radius: 50%;
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid transparent;
+    border-bottom: 2px solid currentColor;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .profile-settings-page {
+        padding: 1rem 0.5rem;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.5rem;
+    }
+    
+    .header-info {
+        text-align: center;
+    }
+    
+    .profile-photo-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .profile-header,
+    .card-content,
+    .card-header {
+        padding: 1.5rem;
+    }
+    
+    .profile-avatar-container {
+        width: 5rem;
+        height: 5rem;
+    }
+    
+    .page-title {
+        font-size: 1.75rem;
+    }
+    
+    .card-title {
+        font-size: 1.25rem;
+    }
+    
+    .account-item {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+    
+    .button-group {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-settings-page {
+        padding: 0.75rem 0.25rem;
+    }
+    
+    .profile-header,
+    .card-content,
+    .card-header {
+        padding: 1rem;
+    }
+    
+    .page-title {
+        font-size: 1.5rem;
+    }
+}

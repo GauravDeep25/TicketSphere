@@ -1,0 +1,606 @@
+/* PaymentPage.css - Modern UPI Payment Interface */
+
+:root {
+  --background-dark: #0f172a;
+  --background-med: #1e293b;
+  --background-light: #334155;
+  --background-card: #1e293b;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --accent-primary: #3b82f6;
+  --accent-primary-hover: #2563eb;
+  --success: #10b981;
+  --success-hover: #059669;
+  --error: #ef4444;
+  --error-hover: #dc2626;
+  --warning: #f59e0b;
+  --border-color: #475569;
+  --border-light: #334155;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+  --border-radius: 0.75rem;
+  --transition: all 0.2s ease-in-out;
+}
+
+/* Main Payment Container */
+.payment-page {
+  background: linear-gradient(135deg, var(--background-dark) 0%, var(--background-med) 100%);
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.payment-container {
+  background-color: var(--background-card);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-lg);
+  padding: 2rem;
+  max-width: 500px;
+  width: 100%;
+  border: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.payment-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-primary), var(--success));
+}
+
+/* Header Section */
+.payment-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.payment-icon {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto 1rem;
+  padding: 0.75rem;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-hover));
+  border-radius: 50%;
+  color: white;
+}
+
+.payment-header h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.payment-header p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+/* Ticket Summary */
+.ticket-summary {
+  background-color: var(--background-light);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--border-light);
+}
+
+.ticket-summary h3 {
+  color: var(--text-primary);
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.summary-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.detail-row span:first-child {
+  color: var(--text-secondary);
+}
+
+.detail-row span:last-child {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.detail-row.commission span:last-child {
+  color: var(--warning);
+}
+
+.detail-row.total {
+  border-top: 1px solid var(--border-light);
+  padding-top: 0.75rem;
+  margin-top: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.detail-row.total span:last-child {
+  color: var(--success);
+  font-size: 1.125rem;
+}
+
+/* Timer Section */
+.timer-section {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.timer {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--warning);
+  color: var(--background-dark);
+  border-radius: 2rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.timer svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* UPI Payment Button */
+.payment-methods {
+  margin-bottom: 1.5rem;
+}
+
+.upi-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 1.25rem;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  color: white;
+}
+
+.upi-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
+}
+
+.upi-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: 1rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.upi-icon svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.upi-content {
+  flex: 1;
+  text-align: left;
+}
+
+.upi-title {
+  display: block;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.upi-subtitle {
+  display: block;
+  font-size: 0.825rem;
+  opacity: 0.8;
+}
+
+.upi-arrow {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* QR Code Section */
+.qr-section {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: var(--background-light);
+  border-radius: var(--border-radius);
+}
+
+.qr-section h2 {
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.qr-code {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background-color: white;
+  border-radius: var(--border-radius);
+  display: inline-block;
+}
+
+.qr-code img {
+  width: 200px;
+  height: 200px;
+  display: block;
+}
+
+.qr-section p {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.upi-apps {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.upi-apps span {
+  background-color: var(--background-card);
+  padding: 0.5rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  color: var(--text-primary);
+  border: 1px solid var(--border-light);
+}
+
+/* Processing State */
+.processing-state {
+  text-align: center;
+}
+
+.processing-icon {
+  width: 4rem;
+  height: 4rem;
+  margin: 0 auto 1.5rem;
+  color: var(--accent-primary);
+}
+
+.processing-content h2 {
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.processing-content p {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+/* Verification Buttons */
+.verification-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.success-button {
+  background: linear-gradient(135deg, var(--success), var(--success-hover));
+  color: white;
+  border: none;
+  padding: 0.875rem 1.5rem;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.success-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.failed-button {
+  background: linear-gradient(135deg, var(--error), var(--error-hover));
+  color: white;
+  border: none;
+  padding: 0.875rem 1.5rem;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.failed-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+/* Success State */
+.success-state {
+  text-align: center;
+}
+
+.success-icon {
+  width: 4rem;
+  height: 4rem;
+  margin: 0 auto 1.5rem;
+  color: var(--success);
+}
+
+.success-state h1 {
+  color: var(--text-primary);
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.success-state p {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.success-details {
+  background-color: var(--background-light);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 2rem;
+}
+
+.success-amount {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--success);
+}
+
+.success-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Failed State */
+.failed-state {
+  text-align: center;
+}
+
+.failed-icon {
+  width: 4rem;
+  height: 4rem;
+  margin: 0 auto 1.5rem;
+  color: var(--error);
+}
+
+.failed-state h1 {
+  color: var(--text-primary);
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.failed-state p {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.failed-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Loading State */
+.loading-state {
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.loading-spinner {
+  width: 3rem;
+  height: 3rem;
+  border: 3px solid var(--border-light);
+  border-top: 3px solid var(--accent-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1.5rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-state h2 {
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.loading-state p {
+  color: var(--text-secondary);
+}
+
+/* Button Styles */
+.primary-button {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-hover));
+  color: white;
+  border: none;
+  padding: 0.875rem 1.5rem;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  width: 100%;
+}
+
+.primary-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.secondary-button {
+  background-color: var(--background-light);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 0.875rem 1.5rem;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  width: 100%;
+}
+
+.secondary-button:hover {
+  background-color: var(--background-med);
+  border-color: var(--accent-primary);
+}
+
+.cancel-button {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  width: 100%;
+}
+
+.cancel-button:hover {
+  background-color: var(--background-light);
+  color: var(--text-primary);
+}
+
+.cancel-link {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 0.875rem;
+  margin-top: 1rem;
+}
+
+.cancel-link:hover {
+  color: var(--text-secondary);
+}
+
+.retry-button {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-hover));
+  color: white;
+  border: none;
+  padding: 0.875rem 1.5rem;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  width: 100%;
+}
+
+.retry-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+/* Security Info */
+.security-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-light);
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.security-icon {
+  font-size: 1rem;
+}
+
+/* Payment Actions */
+.payment-actions {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Animations */
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .payment-page {
+    padding: 1rem 0.5rem;
+  }
+  
+  .payment-container {
+    padding: 1.5rem;
+  }
+  
+  .payment-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .qr-code img {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .upi-apps {
+    gap: 0.5rem;
+  }
+  
+  .upi-apps span {
+    font-size: 0.75rem;
+    padding: 0.375rem 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .payment-container {
+    padding: 1rem;
+    margin: 0.5rem;
+  }
+  
+  .verification-buttons {
+    gap: 0.75rem;
+  }
+  
+  .success-actions,
+  .failed-actions {
+    gap: 0.75rem;
+  }
+}

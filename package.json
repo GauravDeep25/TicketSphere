@@ -1,0 +1,43 @@
+{
+  "name": "ticketsphere-fullstack",
+  "version": "1.0.0",
+  "description": "TicketSphere - Full Stack Event Ticketing Platform",
+  "main": "server/src/server.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "start": "npm run server:start",
+    "build": "npm run client:build",
+    "server:dev": "cd server && npm run dev",
+    "server:start": "cd server && npm start",
+    "client:dev": "cd client && npm run dev",
+    "client:build": "cd client && npm run build",
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install",
+    "clean": "rm -rf server/node_modules client/node_modules node_modules",
+    "deploy:render": "echo 'Deploying to Render...' && git add . && git commit -m 'Production deployment' && git push origin main",
+    "build:prod": "NODE_ENV=production npm run client:build",
+    "start:prod": "NODE_ENV=production npm run server:start",
+    "postinstall": "npm run install:all"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GauravDeep25/TicketSphere.git"
+  },
+  "keywords": [
+    "react",
+    "express",
+    "mongodb",
+    "firebase",
+    "ticketing",
+    "events",
+    "fullstack"
+  ],
+  "author": "TicketSphere Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  }
+}
