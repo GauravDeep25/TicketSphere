@@ -13,8 +13,10 @@ Your TicketSphere app consists of two separate services:
 ### 🔧 Step 1: Prepare Repository
 ✅ Your repository is already configured with:
 - `requirements.txt` for Render compatibility
-- Build scripts for both server and client
+- Build scripts for both server and client  
 - Proper package.json configurations
+- Optimized Vite build with esbuild minifier
+- Firebase v10+ with proper module handling
 - No render.yaml (to avoid blueprint conflicts)
 
 ### 🖥️ Step 2: Deploy Backend API Service
@@ -44,6 +46,9 @@ Your TicketSphere app consists of two separate services:
    MERCHANT_NAME=TicketSphere
    FIREBASE_PROJECT_ID=ticketsphere-0101
    FIREBASE_CLIENT_EMAIL=firebase-adminsdk-fbsvc@ticketsphere-0101.iam.gserviceaccount.com
+   FIREBASE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\nYOUR_PRIVATE_KEY_CONTENT_HERE\n-----END PRIVATE KEY-----\n"
+   FIREBASE_PRIVATE_KEY_ID=your_private_key_id_here
+   FIREBASE_CLIENT_ID=your_client_id_here
    EMAIL_SERVICE=gmail
    EMAIL_USER=support@ticketsphere.com
    ```
@@ -94,12 +99,21 @@ The backend is already configured to allow your Render frontend URLs.
 Replace the placeholder Firebase values with your actual Firebase project credentials:
 
 **Backend Variables to Update**:
-- `FIREBASE_PROJECT_ID`: Your actual Firebase project ID
+- `FIREBASE_PROJECT_ID`: Your actual Firebase project ID  
 - `FIREBASE_CLIENT_EMAIL`: Your Firebase service account email
+- `FIREBASE_PRIVATE_KEY`: Your Firebase service account private key (include the full key with -----BEGIN PRIVATE KEY----- headers)
+- `FIREBASE_PRIVATE_KEY_ID`: Your Firebase private key ID
+- `FIREBASE_CLIENT_ID`: Your Firebase client ID
+
+**How to get Firebase Service Account credentials**:
+1. Go to Firebase Console → Project Settings → Service Accounts
+2. Click "Generate new private key" 
+3. Download the JSON file
+4. Extract the values for the environment variables above
 
 **Frontend Variables to Update**:
 - `VITE_FIREBASE_API_KEY`: Your actual Firebase API key
-- `VITE_FIREBASE_AUTH_DOMAIN`: Your Firebase auth domain
+- `VITE_FIREBASE_AUTH_DOMAIN`: Your Firebase auth domain  
 - `VITE_FIREBASE_PROJECT_ID`: Your Firebase project ID
 - All other VITE_FIREBASE_* variables
 
@@ -140,6 +154,10 @@ Replace the placeholder Firebase values with your actual Firebase project creden
 - ✅ **FIXED**: Configured Vite to handle Firebase modular imports correctly
 - ✅ **FIXED**: Added proper chunking strategy for Firebase packages
 
+**Vite Build Errors**:
+- ✅ **FIXED**: Switched from Terser to esbuild minifier (faster, no extra dependencies)
+- ✅ **FIXED**: Resolved "terser not found" error in production builds
+
 **Build Failures**:
 - Check environment variables are set correctly
 - Verify root directory paths (server/ for backend, client/ for frontend)
@@ -154,9 +172,14 @@ Replace the placeholder Firebase values with your actual Firebase project creden
 - Check IP whitelist settings
 
 **Common Firebase Issues**:
+- ✅ **FIXED**: Added missing FIREBASE_PRIVATE_KEY and related environment variables
 - Ensure Firebase environment variables are set correctly
-- Check that Firebase project configuration matches your actual project
+- Check that Firebase project configuration matches your actual project  
 - Verify authorized domains in Firebase Console
+
+**MongoDB/Mongoose Issues**:
+- ✅ **FIXED**: Removed duplicate transactionId index in Commission model
+- If you see "Duplicate schema index" warnings, check for fields with both `unique: true` and explicit `.index()` calls
 
 ---
 

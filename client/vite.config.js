@@ -18,12 +18,10 @@ export default defineConfig({
   },
   build: {
     // Production build optimizations
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: false, // Keep console.warn for Firebase error handling
-        drop_debugger: true
-      }
+    minify: 'esbuild', // Use esbuild (faster and no extra dependency)
+    minifyOptions: {
+      drop: ['debugger'], // Remove debugger statements
+      // Keep console.warn for Firebase error handling
     },
     rollupOptions: {
       output: {
