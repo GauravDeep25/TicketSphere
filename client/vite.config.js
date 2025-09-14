@@ -7,9 +7,8 @@ export default defineConfig({
   optimizeDeps: {
     include: [
       "firebase/app",
-      "firebase/auth",
-      "firebase/firestore",
-      "firebase/analytics"
+      "firebase/auth", 
+      "firebase/firestore"
     ]
   },
   server: {
@@ -22,24 +21,25 @@ export default defineConfig({
     minify: 'terser',
     terserOptions: {
       compress: {
-        drop_console: true, // Remove console.log in production
-        drop_debugger: true,
-        pure_funcs: ['console.log', 'console.debug', 'console.info']
+        drop_console: false, // Keep console.warn for Firebase error handling
+        drop_debugger: true
       }
     },
     rollupOptions: {
       output: {
-        manualChunks: {
-          // Split vendor chunks for better caching
-          react: ['react', 'react-dom'],
-          router: ['react-router-dom'],
-          firebase: ['firebase'],
-          ui: ['lucide-react']
+        manualChunks: undefined // Let Vite handle chunking automatically
+      },
+      external: (id) => {
+        // Don't bundle analytics in SSR/build context
+        if (id.includes('firebase/analytics') && typeof window === 'undefined') {
+          return true;
         }
+        return false;
       }
     },
-    chunkSizeWarningLimit: 1000, // Increase chunk size limit
+    chunkSizeWarningLimit: 1600, // Increase chunk size limit for Firebase
     sourcemap: false, // Disable source maps in production for security
+    target: 'es2015' // Better browser support
   },
   // Environment variable handling
   define: {

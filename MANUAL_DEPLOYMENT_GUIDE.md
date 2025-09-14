@@ -135,9 +135,15 @@ Replace the placeholder Firebase values with your actual Firebase project creden
 
 ## 🛠️ Troubleshooting
 
+**Firebase Build Errors**:
+- ✅ **FIXED**: Updated Firebase to v10.13.2 and Vite config for proper module handling
+- ✅ **FIXED**: Configured Vite to handle Firebase modular imports correctly
+- ✅ **FIXED**: Added proper chunking strategy for Firebase packages
+
 **Build Failures**:
 - Check environment variables are set correctly
 - Verify root directory paths (server/ for backend, client/ for frontend)
+- Firebase package resolution issues have been resolved
 
 **CORS Errors**:
 - Update FRONTEND_URL in backend environment variables
@@ -146,6 +152,11 @@ Replace the placeholder Firebase values with your actual Firebase project creden
 **Database Connection**:
 - Verify MongoDB Atlas connection string
 - Check IP whitelist settings
+
+**Common Firebase Issues**:
+- Ensure Firebase environment variables are set correctly
+- Check that Firebase project configuration matches your actual project
+- Verify authorized domains in Firebase Console
 
 ---
 

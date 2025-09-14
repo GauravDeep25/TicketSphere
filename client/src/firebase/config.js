@@ -28,8 +28,14 @@ export const db = getFirestore(app);
 
 // Only run Analytics in the browser (not during SSR or Node.js build)
 export let analytics;
-if (typeof window !== "undefined") {
-  import("firebase/analytics").then(({ getAnalytics }) => {
-    analytics = getAnalytics(app);
-  });
+if (typeof window !== "undefined" && typeof document !== "undefined") {
+  try {
+    import("firebase/analytics").then(({ getAnalytics }) => {
+      analytics = getAnalytics(app);
+    }).catch((error) => {
+      console.warn("Analytics failed to load:", error);
+    });
+  } catch (error) {
+    console.warn("Analytics import failed:", error);
+  }
 }
