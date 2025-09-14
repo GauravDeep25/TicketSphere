@@ -87,8 +87,7 @@ const commissionSchema = new mongoose.Schema({
   
 }, { timestamps: true });
 
-// Indexes for efficient queries
-commissionSchema.index({ transactionId: 1 });
+// Indexes for efficient queries (transactionId index is already created by unique: true)
 commissionSchema.index({ sellerId: 1, createdAt: -1 });
 commissionSchema.index({ buyerId: 1, createdAt: -1 });
 commissionSchema.index({ adminId: 1, createdAt: -1 });
