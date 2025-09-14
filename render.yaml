@@ -4,7 +4,6 @@ services:
     name: ticketsphere-api
     env: node
     region: oregon
-    plan: free
     buildCommand: cd server && npm install
     startCommand: cd server && npm start
     healthCheckPath: /api/health
@@ -56,7 +55,6 @@ services:
   - type: web
     name: ticketsphere-frontend
     env: static
-    plan: free
     buildCommand: cd client && npm install && npm run build
     staticPublishPath: client/dist
     routes:
