@@ -15,8 +15,7 @@
     "clean": "rm -rf server/node_modules client/node_modules node_modules",
     "deploy:render": "echo 'Deploying to Render...' && git add . && git commit -m 'Production deployment' && git push origin main",
     "build:prod": "NODE_ENV=production npm run client:build",
-    "start:prod": "NODE_ENV=production npm run server:start",
-    "postinstall": "npm run install:all"
+    "start:prod": "NODE_ENV=production npm run server:start"
   },
   "repository": {
     "type": "git",
