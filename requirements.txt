@@ -1,0 +1,38 @@
+# TicketSphere - Node.js Application Requirements
+# This file helps Render identify the project structure
+
+# Node.js version
+node==18.x
+
+# Build Command: npm install
+# Start Command: npm start
+
+# Project Structure:
+# - Root: Main project with server and client
+# - Server: Express.js backend (./server/)
+# - Client: React frontend (./client/)
+
+# Dependencies are managed via package.json files:
+# - ./package.json (root level scripts)
+# - ./server/package.json (backend dependencies) 
+# - ./client/package.json (frontend dependencies)
+
+# Environment Variables Required:
+# Backend (.env variables):
+# - NODE_ENV=production
+# - PORT=10000
+# - MONGODB_URI=mongodb+srv://...
+# - JWT_SECRET=...
+# - FIREBASE_PROJECT_ID=...
+# - FIREBASE_CLIENT_EMAIL=...
+
+# Frontend (VITE_ variables):
+# - VITE_API_URL=https://your-backend.onrender.com/api
+# - VITE_FIREBASE_API_KEY=...
+# - VITE_FIREBASE_AUTH_DOMAIN=...
+# - VITE_FIREBASE_PROJECT_ID=...
+
+# Deployment Instructions:
+# 1. Create two separate services on Render
+# 2. Backend: Web Service pointing to ./server/
+# 3. Frontend: Static Site pointing to ./client/
